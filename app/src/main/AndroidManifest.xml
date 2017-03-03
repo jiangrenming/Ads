@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jrm.ads">
+    <!-- 广点通SDK 相关声明 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />    <!-- 如果需要精确定位的话请加上此权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+       <!-- <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+        <!-- 声明SDK所需要的组件 -->
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false"/>
+        <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+        <!-- 声明该Demo中的组件 -->
+        <activity
+            android:name="guangdiantongsdk.DemoListActivity"
+            android:label="@string/title_activity_maindemo"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="guangdiantongsdk.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="guangdiantongsdk.BannerActivity"
+            android:label="@string/title_activity_banner"/>
+        <activity
+            android:name="guangdiantongsdk.InterstitialADActivity"
+            android:label="@string/title_activity_interstitial_ad"/>
+        <activity
+            android:name="guangdiantongsdk.NativeADActivity"
+            android:label="@string/title_nativead"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="guangdiantongsdk.MultiProcessNativeADActivity"
+            android:label="@string/title_nativead"
+            android:process=":nativead"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="guangdiantongsdk.NativeVideoListDemoActivity"
+            android:label="@string/title_activity_gdtnative_video_ad"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="guangdiantongsdk.NativeVideoDemoActivity"
+            android:label="@string/title_activity_native_video_demo"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="guangdiantongsdk.NativeVideoADActivity"
+            android:label="@string/title_activity_native_video_ad"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="guangdiantongsdk.NativeVideoRecyclerViewActivity"
+            android:label="@string/title_activity_native_video_recycler_view"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="guangdiantongsdk.NativeVideoScrollViewActivity"
+            android:label="@string/title_activity_native_video_scroll_view"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="guangdiantongsdk.NativeVideoPreMovieActivity"
+            android:label="@string/title_activity_native_video_pre_movie"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+    </application>
+</manifest>
